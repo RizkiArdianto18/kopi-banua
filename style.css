@@ -1,0 +1,596 @@
+/* =====================================
+    1. RESET DASAR
+===================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* =====================================
+    2. VARIABEL MEREK
+===================================== */
+:root {
+    --utama: #f95738;
+    --aksen: #ee964b;
+    --teks: #0d3b66;
+    --latar: #faf0ca;
+    --kartu: #f4d35e;
+    --radius: 12px;
+    --jarak: 1.25rem;
+}
+
+/* =====================================
+    3. TIPOGRAFI DAN LATAR
+===================================== */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 110px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--teks);
+    background: var(--latar);
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.25;
+}
+
+h1 {
+    font-size: clamp(1.75rem, 5vw, 2.75rem);
+    color: var(--utama);
+}
+
+h2 {
+    font-size: clamp(1.35rem, 3.5vw, 1.9rem);
+    margin-bottom: var(--jarak);
+}
+
+h3 {
+    margin-bottom: 0.5rem;
+}
+
+p {
+    margin-bottom: 0.5rem;
+}
+
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 var(--jarak);
+}
+
+section {
+    padding: 3rem 0;
+}
+
+/* =====================================
+    4. HEADER DAN IDENTITAS
+===================================== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 1rem 2rem;
+    background: var(--kartu);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.12);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.identitas {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 1 1 350px;
+    min-width: 0;
+}
+
+.identitas img {
+    display: block;
+    width: 65px;
+    height: auto;
+    flex-shrink: 0;
+}
+
+.identitas-teks {
+    min-width: 0;
+}
+
+.identitas h1 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.identitas p {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+/* =====================================
+    5. NAVIGASI FLEXBOX
+===================================== */
+nav {
+    flex: 0 1 auto;
+    min-width: 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 0.75rem 1.5rem;
+}
+
+nav a {
+    color: var(--teks);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+nav a:hover,
+nav a:focus {
+    color: var(--utama);
+}
+
+/* =====================================
+    6. HERO DUA KOLOM
+===================================== */
+.hero {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    padding: 4rem 0;
+}
+
+.hero-teks {
+    flex: 1 1 340px;
+    min-width: 0;
+}
+
+.hero-teks h2 {
+    color: var(--utama);
+    font-size: 2rem;
+}
+
+.hero-teks p {
+    margin-bottom: 1.5rem;
+}
+
+.hero-foto {
+    flex: 1 1 340px;
+    min-width: 0;
+}
+
+.hero-foto img {
+    display: block;
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: var(--radius);
+}
+
+/* =====================================
+    7. TOMBOL
+===================================== */
+.tombol,
+button {
+    display: inline-block;
+    background: var(--utama);
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.25rem;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 0.75rem;
+    transition: background 0.2s ease;
+}
+
+.tombol:hover,
+button:hover {
+    background: var(--teks);
+    color: #fff;
+}
+
+/* =====================================
+    8. TENTANG KAMI
+===================================== */
+.tentang {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.tentang > div {
+    flex: 1 1 300px;
+    min-width: 0;
+}
+
+.tentang-foto img {
+    display: block;
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: var(--radius);
+}
+
+/* =====================================
+    9. KARTU MENU FLEXBOX
+===================================== */
+.deskripsi {
+    margin-bottom: 1.5rem;
+}
+
+.grid-menu {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.kartu-menu {
+    flex: 1 1 300px;
+    min-width: 0;
+    background: var(--kartu);
+    border-radius: var(--radius);
+    padding: var(--jarak);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    margin-bottom: 0;
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+.kartu-menu:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+.kartu-menu img {
+    display: block;
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.kartu-menu h3 {
+    margin: 0.75rem 0 0.25rem;
+}
+
+.kartu-menu p {
+    margin-bottom: 0.5rem;
+}
+
+.harga {
+    font-weight: 700;
+    color: var(--utama);
+    font-size: 1.15rem;
+}
+
+/* =====================================
+    10. TABEL JAM BUKA
+===================================== */
+.tabel-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+
+th,
+td {
+    border: 1px solid #e0d6b6;
+    padding: 0.8rem;
+    text-align: left;
+}
+
+th {
+    background: var(--kartu);
+}
+
+/* =====================================
+    11. GALERI
+===================================== */
+.galeri {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.galeri figure {
+    flex: 1 1 250px;
+    min-width: 0;
+    background: var(--kartu);
+    padding: 0.75rem;
+    border-radius: var(--radius);
+}
+
+.galeri img {
+    display: block;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.galeri figcaption {
+    padding-top: 0.5rem;
+    font-weight: 600;
+}
+
+.video-container {
+    width: 100%;
+}
+
+.video-container h3 {
+    margin-bottom: 1rem;
+}
+
+.video-container video {
+    display: block;
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    margin: 0;
+    border-radius: var(--radius);
+    background: #000;
+}
+
+/* =====================================
+    12. FORM PEMESANAN
+===================================== */
+form {
+    width: 100%;
+    max-width: 600px;
+}
+
+label {
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 0.35rem;
+    font-weight: 600;
+}
+
+input,
+select,
+textarea {
+    display: block;
+    width: 100%;
+    padding: 0.7rem;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--teks);
+    background: #fff;
+    border: 1px solid #cfc5ac;
+    border-radius: 8px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid var(--aksen);
+    outline-offset: 1px;
+}
+
+button {
+    margin-top: 1.25rem;
+}
+
+/* =====================================
+    13. ALAMAT DAN KONTAK
+===================================== */
+.kontak-info {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: 1.5rem;
+}
+
+.kontak-kartu {
+    flex: 1 1 250px;
+    min-width: 0;
+    padding: 1.25rem;
+    background: var(--kartu);
+    border-radius: var(--radius);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.kontak-kartu h3 {
+    color: var(--utama);
+    margin-bottom: 0.75rem;
+}
+
+.kontak-kartu p {
+    overflow-wrap: anywhere;
+}
+
+.kontak-kartu .tombol {
+    max-width: 100%;
+}
+
+/* =====================================
+    14. FOOTER TIGA KOLOM
+===================================== */
+footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+    background: var(--utama);
+    color: #f3ebe4;
+    padding: 2.5rem 2rem;
+    margin-top: 3rem;
+}
+
+footer > div {
+    flex: 1 1 240px;
+    min-width: 0;
+}
+
+footer h3 {
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+footer p {
+    margin-bottom: 0.25rem;
+}
+
+footer a {
+    color: #f3ebe4;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: var(--kartu);
+}
+
+
+/* Tampilan dasar: ponsel */
+.hero {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.5rem;
+    padding: 2rem 0;
+}
+
+section {
+    padding: 2rem 0;
+}
+
+header {
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem;
+}
+
+nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem 1rem;
+}
+
+footer {
+    flex-direction: column;
+    padding: 2rem 1.25rem;
+}
+
+/* Tablet: mulai 768px */
+@media (min-width: 768px) {
+    .grid-menu {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero {
+        flex-direction: row;
+        align-items: center;
+        gap: 2.5rem;
+    }
+
+    section {
+        padding: 3rem 0;
+    }
+
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    nav {
+        width: auto;
+    }
+
+    nav ul {
+        justify-content: flex-end;
+    }
+
+    footer {
+        flex-direction: row;
+        padding: 2.5rem 2rem;
+    }
+}
+
+/* Desktop: mulai 1024px */
+@media (min-width: 1024px) {
+    .grid-menu {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    section {
+        padding: 4rem 0;
+    }
+}
+
+/* Perbaikan header pada layar HP */
+@media (max-width: 767px) {
+    header {
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .identitas {
+        flex: 0 1 auto;
+        width: 100%;
+        gap: 0.75rem;
+    }
+
+    .identitas img {
+        width: 55px;
+    }
+
+    .identitas h1 {
+        font-size: 1.35rem;
+    }
+
+    .identitas p {
+        font-size: 0.9rem;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    nav ul {
+        justify-content: center;
+        gap: 0.25rem 1rem;
+    }
+
+    nav a {
+        display: inline-block;
+        padding: 0.35rem 0;
+    }
+}
